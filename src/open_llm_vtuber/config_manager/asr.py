@@ -57,6 +57,12 @@ class FasterWhisperConfig(I18nMixin):
         ),
     }
 
+class DolphinASRConfig(I18nMixin):
+    """Configuration for Dolphin ASR."""
+
+    model_path: str = Field(..., alias="model_path")
+    device: Literal["cpu", "cuda"] = Field("cpu", alias="device")
+
 
 class WhisperCPPConfig(I18nMixin):
     """Configuration for WhisperCPP ASR."""
@@ -292,6 +298,7 @@ class ASRConfig(I18nMixin):
         "fun_asr",
         "groq_whisper_asr",
         "sherpa_onnx_asr",
+        "dolphin_asr",
     ] = Field(..., alias="asr_model")
     azure_asr: Optional[AzureASRConfig] = Field(None, alias="azure_asr")
     faster_whisper: Optional[FasterWhisperConfig] = Field(None, alias="faster_whisper")
@@ -324,6 +331,9 @@ class ASRConfig(I18nMixin):
         "sherpa_onnx_asr": Description(
             en="Configuration for Sherpa Onnx ASR", zh="Sherpa Onnx ASR 配置"
         ),
+        "dolphin_asr": Description(
+            en="Configuration for Dolphin ASR", zh="Dolphin ASR 配置"
+        ),
     }
 
     @model_validator(mode="after")
@@ -345,5 +355,8 @@ class ASRConfig(I18nMixin):
             values.groq_whisper_asr.model_validate(values.groq_whisper_asr.model_dump())
         elif asr_model == "SherpaOnnxASR" and values.sherpa_onnx_asr is not None:
             values.sherpa_onnx_asr.model_validate(values.sherpa_onnx_asr.model_dump())
+        elif asr_model == "DolphinASR" and values.dolphin_asr is not None:
+            values.dolphin_asr.model_validate(values.dolphin_asr.model_dump())
+
 
         return values

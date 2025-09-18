@@ -1,0 +1,30 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Cha_RobotStyleA.moc3",
+		"Textures": [
+			"Cha_RobotStyleA.2048/texture_00.png"
+		],
+		"DisplayInfo": "Cha_RobotStyleA.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY",
+				"ParamMouthForm"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen",
+				"ParamEyeLSmile",
+				"ParamEyeRSmile"
+			]
+		}
+	]
+}

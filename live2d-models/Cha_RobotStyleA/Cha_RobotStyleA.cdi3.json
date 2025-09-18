@@ -1,0 +1,142 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "左眼　开闭"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "右眼　开闭"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "左眼　微笑"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "右眼　微笑"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "嘴巴　张开和闭合"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "嘴部　变形"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "",
+			"Name": "脸颊"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "身体旋转　X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "身体旋转　Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "身体旋转　Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "身體前傾後仰"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "Style_Cat"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "Action_Charging"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "Exp_Loading"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "Exp_nowords"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "Exp_Cry"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "Exp_Xeyes"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "Exp_Heart"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part",
+			"Name": "XYZ"
+		},
+		{
+			"Id": "Action_charging",
+			"Name": "Action_charging"
+		},
+		{
+			"Id": "eyes",
+			"Name": "eyes"
+		},
+		{
+			"Id": "mouth",
+			"Name": "mouth"
+		},
+		{
+			"Id": "Style_Cat",
+			"Name": "Style_Cat"
+		},
+		{
+			"Id": "shadow",
+			"Name": "shadow"
+		}
+	]
+}

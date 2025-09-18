@@ -1,0 +1,122 @@
+{
+  "SwitchMode": 0,
+  "RemoveAllExpKeys": [
+    0,
+    0,
+    0
+  ],
+  "MotionShortcutKeyDatas": {
+    "animation/Action_BaseHappy.motion3.json": {
+      "MotionName": "animation/Action_BaseHappy.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    },
+    "animation/Action_StyleCatHappy.motion3.json": {
+      "MotionName": "animation/Action_StyleCatHappy.motion3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "PlayMaxTime": 0.0,
+      "Mode": 0,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "FadeDuration": 0.5
+    }
+  },
+  "ExpShortcutKeyDatas": {
+    "expression/Action_charging.exp3.json": {
+      "ExpName": "expression/Action_charging.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "Mode": 1,
+      "FadeDuration": 0.5
+    },
+    "expression/Exp_cry.exp3.json": {
+      "ExpName": "expression/Exp_cry.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "Mode": 1,
+      "FadeDuration": 0.5
+    },
+    "expression/Exp_Heart.exp3.json": {
+      "ExpName": "expression/Exp_Heart.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "Mode": 1,
+      "FadeDuration": 0.5
+    },
+    "expression/Exp_loading.exp3.json": {
+      "ExpName": "expression/Exp_loading.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "Mode": 1,
+      "FadeDuration": 0.5
+    },
+    "expression/Exp_nowords.exp3.json": {
+      "ExpName": "expression/Exp_nowords.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "Mode": 1,
+      "FadeDuration": 0.5
+    },
+    "expression/Exp_Xeyes.exp3.json": {
+      "ExpName": "expression/Exp_Xeyes.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "Mode": 1,
+      "FadeDuration": 0.5
+    },
+    "expression/Style_CatEars.exp3.json": {
+      "ExpName": "expression/Style_CatEars.exp3.json",
+      "IsEnable": true,
+      "IsGlobal": true,
+      "Keys": [
+        0,
+        0,
+        0
+      ],
+      "Mode": 1,
+      "FadeDuration": 0.5
+    }
+  }
+}

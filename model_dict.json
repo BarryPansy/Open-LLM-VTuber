@@ -26,5 +26,35 @@
                 "": 1
             }
         }
+    },
+    {
+        "name": "Cha_RobotStyleA",
+        "description": "Robot Style Character A - 机器人风格角色A",
+        "url": "/live2d-models/Cha_RobotStyleA/runtime/Cha_RobotStyleA.model3.json",
+        "kScale": 1,
+        "initialXshift": 0,
+        "initialYshift": 0,
+        "kXOffset": 1150,
+        "idleMotionGroupName": "Idle",
+        "defaultExpression": 0,
+        "emotionMap": {
+            "neutral": 0,
+            "disgust": 5,
+            "fear": 2,
+            "joy": 1,
+            "smirk": 1,
+            "sadness": 5,
+            "surprise": 3
+        },
+        "tapMotions": {
+            "HitAreaHead": {
+                "": 1
+            },
+            "HitAreaBody": {
+                "": 1
+            }
+        },
+        "pointerInteractive": true,
+        "scrollToResize": true
     }
 ]

@@ -6,6 +6,7 @@ from .agents.basic_memory_agent import BasicMemoryAgent
 from .stateless_llm_factory import LLMFactory as StatelessLLMFactory
 from .agents.hume_ai import HumeAIAgent
 from .agents.letta_agent import LettaAgent
+from .agents.rag_agent import RAGAgent
 
 from ..mcpp.tool_manager import ToolManager
 from ..mcpp.tool_executor import ToolExecutor
@@ -126,6 +127,48 @@ class AgentFactory:
                 segment_method=settings.get("segment_method"),
                 host=settings.get("host"),
                 port=settings.get("port"),
+            )
+
+        elif conversation_agent_choice == "rag_agent":
+            # Get the LLM provider choice from agent settings
+            rag_settings: dict = agent_settings.get("rag_agent", {})
+            llm_provider: str = rag_settings.get("llm_provider")
+
+            if not llm_provider:
+                raise ValueError("LLM provider not specified for RAG agent")
+
+            # Get the LLM config for this provider
+            llm_config: dict = llm_configs.get(llm_provider)
+            if not llm_config:
+                raise ValueError(
+                    f"Configuration not found for LLM provider: {llm_provider}"
+                )
+
+            # Get RAG config
+            rag_config = kwargs.get("rag_config")
+            if not rag_config:
+                raise ValueError("RAG configuration not provided for RAG agent")
+
+            # Extract MCP components/data needed by RAGAgent from kwargs
+            tool_manager: Optional[ToolManager] = kwargs.get("tool_manager")
+            tool_executor: Optional[ToolExecutor] = kwargs.get("tool_executor")
+            mcp_prompt_string: str = kwargs.get("mcp_prompt_string", "")
+
+            return RAGAgent(
+                live2d_model=live2d_model,
+                id=kwargs.get("id", "rag_agent"),
+                tts_preprocessor_config=tts_preprocessor_config,
+                faster_first_response=rag_settings.get("faster_first_response", True),
+                segment_method=rag_settings.get("segment_method", "pysbd"),
+                rag_config=rag_config,
+                llm_provider=llm_provider,
+                llm_configs=llm_configs,
+                system_prompt=system_prompt,
+                character_avatar=kwargs.get("character_avatar", ""),
+                system_config=kwargs.get("system_config", {}),
+                tool_manager=tool_manager,
+                tool_executor=tool_executor,
+                mcp_prompt_string=mcp_prompt_string,
             )
 
         else:

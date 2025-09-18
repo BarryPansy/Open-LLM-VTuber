@@ -75,6 +75,12 @@ character_config:
         config_id: '' # 可选
         idle_timeout: 15 # 空闲超时断开连接的秒数
 
+      # RAG Agent 配置：支持检索增强生成的智能代理
+      rag_agent:
+        llm_provider: 'ollama_llm' # 使用的 LLM 提供商
+        faster_first_response: True
+        segment_method: 'pysbd'
+
       # MemGPT 配置：MemGPT 暂时被移除
       ##
 
@@ -456,6 +462,50 @@ character_config:
         region: 'ap-guangzhou'
         source_lang: 'zh'
         target_lang: 'ja'
+
+  # =================== RAG 配置 ===================
+  rag_config:
+    # 是否启用RAG功能
+    enabled: false
+    
+    # 知识库配置
+    knowledge_base_path: './knowledge_base' # 知识库目录路径
+    
+    # 向量数据库配置
+    vector_store_type: 'chromadb' # 向量存储类型：'chromadb', 'faiss', 'memory'
+    
+    # 嵌入模型配置
+    embedding_model: 'sentence-transformers/all-MiniLM-L6-v2' # 嵌入模型
+    embedding_device: 'cpu' # 运行设备：'cpu', 'cuda'
+    
+    # 检索配置
+    retrieval_top_k: 5 # 检索文档数量
+    retrieval_score_threshold: 0.7 # 相似度阈值
+    
+    # 文档处理配置
+    chunk_size: 1000 # 文档块大小
+    chunk_overlap: 200 # 文档块重叠
+    
+    # 支持的文档类型
+    supported_file_types: ['.txt', '.md', '.pdf', '.docx', '.html']
+    
+    # 自动更新配置
+    auto_update: true # 是否自动更新知识库
+    update_interval: 3600 # 更新间隔（秒）
+    
+    # 上下文增强配置
+    context_window_size: 4000 # 上下文窗口大小
+    max_context_documents: 3 # 最大上下文文档数
+    
+    # ChromaDB 特定配置
+    chromadb_config:
+      persist_directory: './chroma_db' # 持久化目录
+      collection_name: 'knowledge_base' # 集合名称
+    
+    # FAISS 特定配置
+    faiss_config:
+      index_path: './faiss_index' # 索引路径
+      index_type: 'IndexFlatIP' # 索引类型
 
 # 直播平台集成
 live_config:

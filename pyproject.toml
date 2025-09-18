@@ -38,6 +38,15 @@ dependencies = [
     "websocket-client>=1.8.0",
     "letta-client>=0.1.100",
     "duckduckgo-mcp-server>=0.1.1",
+    # RAG dependencies
+    "langchain>=0.3.0",
+    "langchain-community>=0.3.0",
+    "chromadb>=0.5.0",
+    "sentence-transformers>=3.0.0",
+    "faiss-cpu>=1.8.0",
+    "tiktoken>=0.8.0",
+    "unstructured>=0.10.0",
+    "python-magic-bin>=0.4.14; sys_platform == 'win32'",
 ]
 
 [project.optional-dependencies]
@@ -64,6 +73,10 @@ target-version = "py310"
 [tool.ruff.lint]
 # Ignore E402 (module level import not at top of file) for the run_bilibili_live.py script
 per-file-ignores = { "scripts/run_bilibili_live.py" = ["E402"] }
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple"
+default = true
 
 [[tool.uv.index]]
 url = "https://mirrors.aliyun.com/pypi/simple"

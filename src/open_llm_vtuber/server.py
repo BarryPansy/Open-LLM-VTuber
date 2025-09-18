@@ -17,6 +17,7 @@ from starlette.staticfiles import StaticFiles as StarletteStaticFiles
 from .routes import init_client_ws_route, init_webtool_routes, init_proxy_route
 from .service_context import ServiceContext
 from .config_manager.utils import Config
+from .rag_api import router as rag_router
 
 
 # Create a custom StaticFiles class that adds CORS headers
@@ -96,6 +97,9 @@ class WebSocketServer:
         self.app.include_router(
             init_webtool_routes(default_context_cache=self.default_context_cache),
         )
+        
+        # Include RAG API routes
+        self.app.include_router(rag_router)
 
         # Initialize and include proxy routes if proxy is enabled
         system_config = config.system_config

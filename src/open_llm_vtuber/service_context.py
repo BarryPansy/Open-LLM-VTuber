@@ -379,6 +379,11 @@ class ServiceContext:
         avatar = self.character_config.avatar or ""  # Get avatar from config
 
         try:
+            # 准备RAG配置（如果使用RAG Agent）
+            rag_config = None
+            if agent_config.conversation_agent_choice == "rag_agent":
+                rag_config = self.character_config.rag_config
+            
             self.agent_engine = AgentFactory.create_agent(
                 conversation_agent_choice=agent_config.conversation_agent_choice,
                 agent_settings=agent_config.agent_settings.model_dump(),
@@ -391,6 +396,7 @@ class ServiceContext:
                 tool_manager=self.tool_manager,
                 tool_executor=self.tool_executor,
                 mcp_prompt_string=self.mcp_prompt,
+                rag_config=rag_config,
             )
 
             logger.debug(f"Agent choice: {agent_config.conversation_agent_choice}")

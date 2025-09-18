@@ -58,5 +58,11 @@ class ASRFactory:
             from .sherpa_onnx_asr import VoiceRecognition as SherpaOnnxASR
 
             return SherpaOnnxASR(**kwargs)
+        elif system_name == "dolphin_asr":
+            from .dolphin_asr import VoiceRecognition as DolphinASR
+            return DolphinASR(
+                model_path=kwargs.get("model_path"),
+                device=kwargs.get("device", "cuda"),
+            )
         else:
             raise ValueError(f"Unknown ASR system: {system_name}")

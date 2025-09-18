@@ -144,7 +144,7 @@ class WebSocketServer:
         # Mount main frontend last (as catch-all)
         self.app.mount(
             "/",
-            CORSStaticFiles(directory="frontend", html=True),
+            CORSStaticFiles(directory="../Open-LLM-VTuber-Web/out/renderer/", html=True),
             name="frontend",
         )
 
